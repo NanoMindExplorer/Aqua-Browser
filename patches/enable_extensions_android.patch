@@ -1,0 +1,29 @@
+--- a/build/config/features.gni
++++ b/build/config/features.gni
+@@ -40,7 +40,7 @@
+   # Enable Chrome extensions.
+-  enable_extensions = !is_android && !is_ios && !is_castos && !is_fuchsia
++  enable_extensions = !is_ios && !is_castos && !is_fuchsia
+ 
+--- a/extensions/buildflags/buildflags.gni
++++ b/extensions/buildflags/buildflags.gni
+@@ -10,7 +10,7 @@
+ declare_args() {
+-  enable_extensions = !is_android && !is_ios && !is_castos && !is_fuchsia
++  enable_extensions = !is_ios && !is_castos && !is_fuchsia
+ }
+
+--- a/chrome/browser/extensions/extension_system_factory.cc
++++ b/chrome/browser/extensions/extension_system_factory.cc
+@@ -29,12 +29,12 @@
+ 
+ KeyedService* ExtensionSystemFactory::BuildServiceInstanceFor(
+     content::BrowserContext* context) const {
+- #if !BUILDFLAG(IS_ANDROID)
++ #if 1 // Aqua Browser: Force enable on Android
+   return new ExtensionSystemImpl(
+       Profile::FromBrowserContext(context));
+- #else
+-  return nullptr;
+- #endif
+ }
