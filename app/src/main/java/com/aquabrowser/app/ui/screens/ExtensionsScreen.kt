@@ -13,11 +13,11 @@ fun ExtensionsScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF020617))
+            .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        Text("Extensions", color = Color.White, style = MaterialTheme.typography.headlineMedium)
-        Text("Manage your installed desktop tools", color = Color.Gray, style = MaterialTheme.typography.bodyMedium)
+        Text("Extensions", color = MaterialTheme.colorScheme.onBackground, style = MaterialTheme.typography.headlineMedium)
+        Text("Manage your installed desktop tools", color = MaterialTheme.colorScheme.secondary, style = MaterialTheme.typography.bodyMedium)
         
         Spacer(modifier = Modifier.height(20.dp))
         
@@ -32,15 +32,15 @@ fun ExtensionsScreen() {
 fun ExtensionItem(title: String, desc: String) {
     Card(
         modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E293B))
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Row(
             modifier = Modifier.padding(16.dp).fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Column {
-                Text(title, color = Color.White)
-                Text(desc, color = Color.Gray, style = MaterialTheme.typography.bodySmall)
+                Text(title, color = MaterialTheme.colorScheme.onBackground)
+                Text(desc, color = MaterialTheme.colorScheme.secondary, style = MaterialTheme.typography.bodySmall)
             }
             Switch(checked = true, onCheckedChange = {})
         }

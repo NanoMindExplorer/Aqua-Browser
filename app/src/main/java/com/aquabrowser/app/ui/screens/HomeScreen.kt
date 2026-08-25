@@ -16,13 +16,13 @@ fun HomeScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0F172A)) // Dark ocean background
+            .background(MaterialTheme.colorScheme.background) // Dark ocean background
             .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(60.dp))
         
-        Text("Aqua Browser", color = Color(0xFF38BDF8), fontSize = 28.sp)
+        Text("Aqua Browser", color = MaterialTheme.colorScheme.primary, fontSize = 28.sp)
         
         Spacer(modifier = Modifier.height(40.dp))
         
@@ -30,10 +30,10 @@ fun HomeScreen() {
         Surface(
             modifier = Modifier.fillMaxWidth().height(50.dp),
             shape = RoundedCornerShape(25.dp),
-            color = Color(0xFF1E293B).copy(alpha = 0.8f) // Glassmorphism feel
+            color = MaterialTheme.colorScheme.surface.copy(alpha = 0.8f) // Glassmorphism feel
         ) {
             Box(contentAlignment = Alignment.CenterStart, modifier = Modifier.padding(start = 20.dp)) {
-                Text("Search or type URL", color = Color.Gray)
+                Text("Search or type URL", color = MaterialTheme.colorScheme.secondary)
             }
         }
         

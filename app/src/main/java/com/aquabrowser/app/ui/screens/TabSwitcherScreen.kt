@@ -16,7 +16,7 @@ fun TabSwitcherScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF0F172A))
+            .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
         Row(
@@ -24,9 +24,9 @@ fun TabSwitcherScreen() {
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("4 Open Tabs", color = Color.White, style = MaterialTheme.typography.titleLarge)
+            Text("4 Open Tabs", color = MaterialTheme.colorScheme.onBackground, style = MaterialTheme.typography.titleLarge)
             TextButton(onClick = { /* New Tab */ }) {
-                Text("+ New Tab", color = Color(0xFF38BDF8))
+                Text("+ New Tab", color = MaterialTheme.colorScheme.primary)
             }
         }
         
@@ -46,10 +46,10 @@ fun TabSwitcherScreen() {
 fun TabCardItem(index: Int) {
     Card(
         modifier = Modifier.fillMaxWidth().height(180.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF1E293B))
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surface)
     ) {
         Column(modifier = Modifier.padding(12.dp)) {
-            Text("Tab ${index + 1}", color = Color.White, style = MaterialTheme.typography.labelLarge)
+            Text("Tab ${index + 1}", color = MaterialTheme.colorScheme.onBackground, style = MaterialTheme.typography.labelLarge)
             Spacer(modifier = Modifier.height(8.dp))
             Box(
                 modifier = Modifier

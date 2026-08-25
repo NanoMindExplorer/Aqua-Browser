@@ -13,10 +13,10 @@ fun BookmarksScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF020617))
+            .background(MaterialTheme.colorScheme.background)
             .padding(16.dp)
     ) {
-        Text("Bookmarks & History", color = Color.White, style = MaterialTheme.typography.headlineMedium)
+        Text("Bookmarks & History", color = MaterialTheme.colorScheme.onBackground, style = MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(20.dp))
         
         BookmarkItem("GitHub", "https://github.com")
@@ -28,8 +28,8 @@ fun BookmarksScreen() {
 @Composable
 fun BookmarkItem(title: String, url: String) {
     Column(modifier = Modifier.fillMaxWidth().padding(vertical = 12.dp)) {
-        Text(title, color = Color.White, style = MaterialTheme.typography.titleMedium)
-        Text(url, color = Color(0xFF38BDF8), style = MaterialTheme.typography.bodySmall)
+        Text(title, color = MaterialTheme.colorScheme.onBackground, style = MaterialTheme.typography.titleMedium)
+        Text(url, color = MaterialTheme.colorScheme.primary, style = MaterialTheme.typography.bodySmall)
         Divider(color = Color.DarkGray, modifier = Modifier.padding(top = 8.dp))
     }
 }
