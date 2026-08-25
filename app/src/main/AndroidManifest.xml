@@ -2,14 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aquabrowser.app">
     <uses-permission android:name="android.permission.INTERNET"/>
+    
+    <!-- Support for large screens, tablets, and external monitors without quality loss -->
+    <supports-screens 
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true" />
+
     <application
         android:allowBackup="true"
         android:label="Aqua Browser"
         android:supportsRtl="true"
+        android:resizeableActivity="true"
         android:theme="@style/Theme.AquaBrowser">
+        
+        <!-- Enable Chrome OS / Samsung DeX multi-window support fully -->
+        <meta-data android:name="android.max_aspect" android:value="2.1" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
+            android:resizeableActivity="true"
+            android:configChanges="orientation|keyboardHidden|screenSize|smallestScreenSize|screenLayout|density|uiMode"
+            android:windowSoftInputMode="adjustResize"
             android:theme="@style/Theme.AquaBrowser">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
