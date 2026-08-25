@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqua Browser | The Desktop Experience on Mobile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aqua: {
+                            500: '#00d2ff',
+                            600: '#0072ff',
+                            900: '#020617'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #020617; color: white; }
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #00d2ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0,210,255,0.15) 0%, rgba(0,0,0,0) 70%);
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-panel py-4 transition-all duration-300">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="assets/images/logo.jpg" alt="Aqua Logo" class="h-10 w-10 rounded-full border border-gray-700">
+                <span class="text-xl font-bold tracking-tight">Aqua Browser</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-300 hover:text-white transition">Features</a>
+                <a href="#architecture" class="text-gray-300 hover:text-white transition">Architecture</a>
+            </div>
+            <div>
+                <a href="https://github.com/NanoMindExplorer/Aqua-Browser" target="_blank" class="px-6 py-2 rounded-full bg-white text-black font-semibold hover:bg-gray-200 transition shadow-lg">
+                    <i class="fab fa-github mr-2"></i>View on GitHub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
+            <div class="lg:w-1/2 mt-12 lg:mt-0 text-center lg:text-left z-10">
+                <h1 class="text-5xl lg:text-7xl font-extrabold leading-tight mb-6">
+                    The Power of <br>
+                    <span class="gradient-text">Desktop Chrome</span><br>
+                    in Your Pocket.
+                </h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    Aqua Browser is the ultimate Android web browser. Powered by a custom-compiled Chromium engine to support full desktop extensions, themes, and developer tools.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#features" class="px-8 py-4 rounded-full bg-gradient-to-r from-aqua-500 to-aqua-600 font-bold text-white shadow-lg shadow-aqua-500/30 hover:scale-105 transition transform">
+                        Explore Features
+                    </a>
+                    <a href="https://github.com/NanoMindExplorer/Aqua-Browser/blob/main/BLUEPRINT.md" target="_blank" class="px-8 py-4 rounded-full glass-panel font-bold hover:bg-white/10 transition">
+                        Read the Blueprint
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative z-10 flex justify-center">
+                <div class="relative w-64 md:w-80 transform rotate-[-5deg] hover:rotate-0 transition duration-500">
+                    <!-- Phone Mockup 1 -->
+                    <img src="assets/images/mockup_home.jpg" alt="Aqua Browser Home" class="rounded-[2.5rem] shadow-2xl border-[6px] border-gray-800">
+                </div>
+                <div class="absolute w-64 md:w-80 transform rotate-[10deg] translate-x-20 translate-y-16 lg:translate-x-32 hover:rotate-0 transition duration-500 -z-10">
+                    <!-- Phone Mockup 2 -->
+                    <img src="assets/images/mockup_extensions.jpg" alt="Aqua Browser Extensions" class="rounded-[2.5rem] shadow-2xl border-[6px] border-gray-800 opacity-90">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-[#040b1c]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Uncompromised <span class="gradient-text">Capabilities</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">We didn't just build an Android app. We rebuilt the Chromium engine to unlock restrictions.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition duration-300">
+                    <div class="h-14 w-14 rounded-full bg-aqua-500/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-puzzle-piece text-2xl text-aqua-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Chrome Extensions</h3>
+                    <p class="text-gray-400">Install uBlock Origin, Grammarly, Dark Reader, and thousands of other extensions directly from the Chrome Web Store.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition duration-300">
+                    <div class="h-14 w-14 rounded-full bg-aqua-500/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-roller text-2xl text-aqua-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Dynamic Theming</h3>
+                    <p class="text-gray-400">Download Chrome themes. Our engine parses the manifest and dynamically recolors the entire Android UI to match.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-panel p-8 rounded-2xl hover:-translate-y-2 transition duration-300">
+                    <div class="h-14 w-14 rounded-full bg-aqua-500/20 flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-2xl text-aqua-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Developer Tools</h3>
+                    <p class="text-gray-400">Inspect Element on your phone. View the DOM, Network tabs, and Console logs right from your mobile screen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture -->
+    <section id="architecture" class="py-20 relative overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2">
+                    <img src="assets/images/logo.jpg" alt="Architecture" class="rounded-3xl shadow-2xl shadow-aqua-500/20 w-3/4 mx-auto lg:mx-0">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Engineered for <span class="gradient-text">Performance</span></h2>
+                    <p class="text-gray-400 text-lg mb-6">
+                        Aqua Browser is not a simple WebView wrapper. It is a full fork of the Chromium C++ source code. We apply highly specialized GN compiler patches to force-enable the Extension system natively on Android.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-aqua-500 mt-1 mr-3"></i>
+                            <span class="text-gray-300">Custom JNI Bindings between C++ and Kotlin</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-aqua-500 mt-1 mr-3"></i>
+                            <span class="text-gray-300">User-Agent spoofing for Web Store compatibility</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-aqua-500 mt-1 mr-3"></i>
+                            <span class="text-gray-300">Modern Jetpack Compose UI architecture</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800 bg-[#020617] py-10 text-center">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/NanoMindExplorer/Aqua-Browser" class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="text-gray-500">© 2026 Aqua Browser Project. Built by NanoMindExplorer.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
